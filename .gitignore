@@ -1,1 +1,4 @@
 .DS_Store
+*.pt
+notebooks/detection/runs_yolo/
+__pycache__/
