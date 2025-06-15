@@ -3,8 +3,8 @@ import shutil
 import json
 
 # Diretórios
-src_base = "/Users/pedrofs/Library/CloudStorage/OneDrive-ISCTE-IUL/Mestrado/2ªSem/APVC/Projeto/dataset/augmented-dataset"
-dst_base = "/Users/pedrofs/Library/CloudStorage/OneDrive-ISCTE-IUL/Mestrado/2ªSem/APVC/Projeto/dataset/augmented-flat"
+src_base = "/Users/pedrofs/Library/CloudStorage/OneDrive-ISCTE-IUL/Mestrado/2ªSem/APVC/Projeto/dataset/cnn-kit-dataset-final"
+dst_base = "/Users/pedrofs/Library/CloudStorage/OneDrive-ISCTE-IUL/Mestrado/2ªSem/APVC/Projeto/dataset/flat-cnn-kit-dataset-final"
 mapping_path = os.path.join(dst_base, "clube_para_liga.json")
 
 # Criar diretório destino
