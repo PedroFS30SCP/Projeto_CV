@@ -9,21 +9,21 @@ Este projeto tem como objetivo detetar automaticamente emblemas de clubes de fut
 Projeto_CV/
 ├── notebooks/
 │ ├── classification/
-│ │ ├── CNN.ipynb ← Primeira tentativa de classificação com dataset do Kaggle (Nota: não foi usada no pipeline final)
+│ │ ├── cnn_descartada.ipynb ← Primeira tentativa de classificação com dataset do Kaggle (Nota: não foi usada no pipeline final)
 │ │ └── best_model.pt ← Modelo CNN treinado com logos do Kaggle
 │ │
 │ ├── final-classification/
-│ │ ├── CNN.ipynb ← CNN final treinada com logos recortados através do YOLO de kits reais retirados da net com scraping
+│ │ ├── cnn_final.ipynb ← CNN final treinada com logos recortados através do YOLO de kits reais retirados da net com scraping
 │ │ └── best_model.pt ← Modelo final de classificação
 │ │
 │ ├── detection/
-│ │ ├── Yolo.ipynb ← Treino e análise do modelo YOLOv8
-│ │ ├── Yolo_com_CNN.ipynb ← Integração YOLO + CNN para classificação completa
+│ │ ├── yolo.ipynb ← Treino e análise do modelo YOLOv8
+│ │ ├── yolo_com_cnn.ipynb ← Integração YOLO + CNN para classificação completa
 │ │ └── yolov8n.pt ← Modelo base YOLO usado no treino
 │ │
 │ ├── data-cleaning/
-│ │ ├── 1_Yolo_merge_classes.py ← Junta todas as classes do dataset original YOLO numa só ("logo")
-│ │ ├── 2_Yolo_filter_classes.py ← Remove imagens sem logos de futebol 
+│ │ ├── 1_yolo_merge_classes.py ← Junta todas as classes do dataset original YOLO numa só ("logo")
+│ │ ├── 2_yolo_filter_classes.py ← Remove imagens sem logos de futebol 
 │ │ └── data-aug.py ← Aplicação de Data Augmentation aos recortes YOLO de kits reais retirados da net com scraping
 │ │
 │ └── scraping/
