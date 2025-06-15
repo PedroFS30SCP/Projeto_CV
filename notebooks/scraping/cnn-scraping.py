@@ -16,9 +16,9 @@ def save_image_from_url(url, save_path):
         img = Image.open(BytesIO(response.content)).convert("RGB")
         img = img.resize((640, 640))
         img.save(save_path)
-        print(f"✅ Guardado: {save_path}")
+        print(f"Guardado: {save_path}")
     except Exception as e:
-        print(f"❌ Erro ao guardar imagem: {e}")
+        print(f"Erro ao guardar imagem: {e}")
 
 # Processamento
 for league in sorted(os.listdir(root_dir)):
@@ -29,24 +29,24 @@ for league in sorted(os.listdir(root_dir)):
         club_output_dir = os.path.join(output_dir, league, club)
         image_path = os.path.join(club_output_dir, f"{club}.jpg")
 
-        # ⛔️ Pular se imagem já existe
+        # Pular se imagem já existe
         if os.path.exists(image_path):
-            print(f"⏭️ Já existe: {club}")
+            print(f"Já existe: {club}")
             continue
 
         query = f"{club} kit"
-        print(f"\n🔍 A pesquisar: {query}")
+        print(f"\nA pesquisar: {query}")
         with DDGS() as ddgs:
             try:
                 results = list(ddgs.images(query, max_results=1))
                 time.sleep(5)
             except Exception as e:
-                print(f"❌ Erro na pesquisa DuckDuckGo: {e}")
+                print(f"Erro na pesquisa DuckDuckGo: {e}")
                 continue
 
         if results:
             image_url = results[0]['image']
-            print(f"🖼️ URL encontrada: {image_url}")
+            print(f"URL encontrada: {image_url}")
 
             try:
                 response = requests.get(image_url, timeout=10)
@@ -58,10 +58,10 @@ for league in sorted(os.listdir(root_dir)):
                 if approval == 'y':
                     os.makedirs(club_output_dir, exist_ok=True)
                     img.save(image_path)
-                    print(f"💾 Imagem guardada: {image_path}")
+                    print(f"Imagem guardada: {image_path}")
                 else:
-                    print("⛔ Imagem rejeitada.")
+                    print("Imagem rejeitada.")
             except Exception as e:
-                print(f"❌ Erro ao processar imagem: {e}")
+                print(f"Erro ao processar imagem: {e}")
         else:
-            print(f"⚠️ Nenhum resultado para {query}")
+            print(f"Nenhum resultado para {query}")
