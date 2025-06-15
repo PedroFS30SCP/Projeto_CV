@@ -9,7 +9,7 @@ Este projeto tem como objetivo detetar automaticamente emblemas de clubes de fut
 Projeto_CV/
 ├── notebooks/
 │ ├── classification/
-│ │ ├── CNN.ipynb ← Primeira tentativa de classificação com dataset do Kaggle (Nota: não foi usada para classificação final)
+│ │ ├── CNN.ipynb ← Primeira tentativa de classificação com dataset do Kaggle (Nota: não foi usada no pipeline final)
 │ │ └── best_model.pt ← Modelo CNN treinado com logos do Kaggle
 │ │
 │ ├── final-classification/
@@ -24,7 +24,7 @@ Projeto_CV/
 │ ├── data-cleaning/
 │ │ ├── 1_Yolo_merge_classes.py ← Junta todas as classes do dataset original YOLO numa só ("logo")
 │ │ ├── 2_Yolo_filter_classes.py ← Remove imagens sem logos de futebol 
-│ │ └── data-aug.ipynb ← Aplicação de Data Augmentation aos recortes YOLO de kits reais retirados da net com scraping
+│ │ └── data-aug.py ← Aplicação de Data Augmentation aos recortes YOLO de kits reais retirados da net com scraping
 │ │
 │ └── scraping/
 │ └── cnn-scraping.py ← Script para extrair imagens de kits por clube da internet
